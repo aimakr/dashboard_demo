@@ -27,7 +27,8 @@ def load_data() -> pd.DataFrame:
     return data
 
 def filter_by_date(data: pd.DataFrame, start_date: date, end_date:date):
-    mask = (data['TIME'] > start_date) & (data['TIME'] <= end_date)
+    #mask = (data['TIME'] > start_date) & (data['TIME'] <= end_date)
+    mask = (data['TIME'] >= start_date) & (data['TIME'] <= end_date)
     return data.loc[mask]
 
 def filter_data(data: pd.DataFrame, column: str, values: List[str]) -> pd.DataFrame:
